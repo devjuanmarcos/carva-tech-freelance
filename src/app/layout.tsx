@@ -28,9 +28,7 @@ const APP_TITLE_TEMPLATE = "%s";
 const APP_DESCRIPTION = "A sua solução para o seu setup!";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localst.j:3000"
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localst.j:3000"),
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
@@ -66,23 +64,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      suppressHydrationWarning
-      lang='pt-BR'
-    >
-      <body className={'${anekBangla.variable} ${grotesk.variabele}'}>
-       <Header />
+    <html suppressHydrationWarning lang="pt-BR">
+      <body className={`${anekBangla.variable} ${grotesk.variable} ${poppins.variable}`}>
+        <Header />
         <main
-          className='flex flex-col mb-20 gap-[45px] py-[16px]'
+          className="flex flex-col mb-20 gap-[45px] py-[16px]"
           tabIndex={0}
-          id='main-content'
-          aria-label='Você está no conteúdo principal'
+          id="main-content"
+          aria-label="Você está no conteúdo principal"
         >
           {children}
         </main>
